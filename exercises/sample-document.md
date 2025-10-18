@@ -34,7 +34,7 @@ function hello() {
 ### Bảng so sánh Git vs GitHub
 
 |Tính năng         |  Git    | GitHub |
-| ________________ |________ | ______ |
+| ---------------- |-------- | ------ |
 |Version Control   |   ✅   |   ✅   |
 |Remote Repository |   ❌   |   ✅   | 
 | Issue Tracking   |   ❌   |   ✅   |
