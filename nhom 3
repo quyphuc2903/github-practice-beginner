@@ -1,0 +1,74 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    int R1, G1, B1;
+    int R2, G2, B2;
+    char mau_sac[10];
+    char mau_sac1[10];
+    char net_left[10], net_right[10];
+
+    while (1) {
+        printf("Nhap mau hai ben cam ung trai (R G B): ");
+        scanf("%d %d %d", &R1, &G1, &B1);
+        printf("Loai vach trai (Lien/Dut) : ");
+        scanf("%s", net_left);
+
+        printf("Nhap mau hai ben cam ung phai (R G B): ");
+        scanf("%d %d %d", &R2, &G2, &B2);
+        printf("Loai vach phai (Lien/Dut) : ");
+        scanf("%s", net_right);
+
+        if (R1 == 250 && G1 == 250 && B1 == 250) {
+            strcpy(mau_sac, "Trang");
+        } else if (R1 == 240 && G1 == 240 && B1 == 50) {
+            strcpy(mau_sac, "Vang");
+        } else if (R1 == 5 && G1 == 5 && B1 == 5) {
+            strcpy(mau_sac, "Den");
+        } else {
+            strcpy(mau_sac, "Khac");
+        }
+
+  
+        if (R2 == 250 && G2 == 250 && B2 == 250) {
+            strcpy(mau_sac1, "Trang");
+        } else if (R2 == 240 && G2 == 240 && B2 == 50) {
+            strcpy(mau_sac1, "Vang");
+
+            strcpy(mau_sac1, "Khac");
+        }
+
+        if (strcmp(mau_sac, "Trang") == 0 && strcmp(mau_sac1, "Trang") == 0 &&
+            strcmp(net_left, "Lien") == 0 && strcmp(net_right, "Lien") == 0) {
+            printf("Khong duoc phep chuyen, lan lan!\n");
+        }
+        else if (strcmp(mau_sac, "Trang") == 0 && strcmp(mau_sac1, "Trang") == 0 &&
+                (strcmp(net_left, "Dut") == 0 || strcmp(net_right, "Dut") == 0)) {
+            printf("Duoc phep chuyen, lan lan!\n");
+        }
+        else if (((strcmp(mau_sac, "Vang") == 0 && strcmp(net_left, "Lien") == 0) &&
+                 (strcmp(mau_sac1, "Trang") == 0 && strcmp(net_right, "Lien") == 0)) ||
+                 ((strcmp(mau_sac1, "Vang") == 0 && strcmp(net_right, "Lien") == 0) &&
+                 (strcmp(mau_sac, "Trang") == 0 && strcmp(net_left, "Lien") == 0))) {
+            printf("Khong duoc lan lan, chuyen lan!\n");
+        }
+        else if (((strcmp(mau_sac, "Vang") == 0 && strcmp(net_left, "Lien") == 0) &&
+                 (strcmp(mau_sac1, "Trang") == 0 && strcmp(net_right, "Dut") == 0)) ||
+                 ((strcmp(mau_sac1, "Vang") == 0 && strcmp(net_right, "Lien") == 0) &&
+                 (strcmp(mau_sac, "Trang") == 0 && strcmp(net_left, "Dut") == 0))) {
+            printf("Duoc lan lan, chuyen lan!\n");
+        }
+        else if (((strcmp(mau_sac, "Vang") == 0 && strcmp(net_left, "Dut") == 0) &&
+                 (strcmp(mau_sac1, "Trang") == 0 && strcmp(net_right, "Dut") == 0)) ||
+                 ((strcmp(mau_sac1, "Vang") == 0 && strcmp(net_right, "Dut") == 0) &&
+                 (strcmp(mau_sac, "Trang") == 0 && strcmp(net_left, "Dut") == 0))) {
+            printf("Duoc phep lan lan, chuyen lan!\n");
+        }
+        else {
+            printf("Kiem tra lai du lieu nhap vao...\n");
+        }
+    }
+
+    printf("Chuong trinh ket thuc!\n");
+    return 0;
+}
