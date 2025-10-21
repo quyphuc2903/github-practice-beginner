@@ -23,8 +23,6 @@ int main() {
             strcpy(mau_sac, "Trang");
         } else if (R1 == 240 && G1 == 240 && B1 == 50) {
             strcpy(mau_sac, "Vang");
-        } else if (R1 == 5 && G1 == 5 && B1 == 5) {
-            strcpy(mau_sac, "Den");
         } else {
             strcpy(mau_sac, "Khac");
         }
